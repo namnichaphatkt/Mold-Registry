@@ -25,7 +25,7 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);min
 .pin-keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:240px;margin:0 auto;}
 .pin-key{background:var(--surface2);border:1px solid var(--border);border-radius:12px;color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:500;padding:16px;cursor:pointer;transition:all 0.1s;user-select:none;}
 .pin-key:hover{background:var(--border);}
-.pin-key:active{transform:scale(0.93);}
+.pin-key:active{transform:scale(0.93);} .pin-key{touch-action:manipulation;-webkit-tap-highlight-color:transparent;}
 .pin-key.del{font-size:16px;color:var(--text3);}
 .pin-key.empty{visibility:hidden;pointer-events:none;}
 .login-error{color:var(--red);font-size:13px;margin-top:14px;min-height:20px;}
@@ -127,25 +127,12 @@ tbody td{padding:11px 14px;vertical-align:middle;}
       <div class="pin-dot" id="d3"></div>
     </div>
     <div class="pin-keypad">
-      <button class="pin-key" onclick="pinPress('1')">1</button>
-      <button class="pin-key" onclick="pinPress('2')">2</button>
-      <button class="pin-key" onclick="pinPress('3')">3</button>
-      <button class="pin-key" onclick="pinPress('4')">4</button>
-      <button class="pin-key" onclick="pinPress('5')">5</button>
-      <button class="pin-key" onclick="pinPress('6')">6</button>
-      <button class="pin-key" onclick="pinPress('7')">7</button>
-      <button class="pin-key" onclick="pinPress('8')">8</button>
-      <button class="pin-key" onclick="pinPress('9')">9</button>
-      <button class="pin-key empty"></button>
-      <button class="pin-key" onclick="pinPress('0')">0</button>
-      <button class="pin-key del" onclick="pinDel()">&#9003;</button>
-    </div>
-    <div class="login-error" id="loginError"></div>
-  </div>
-</div>
-
-<!-- MAIN APP -->
-<div id="mainApp">
-  <header>
-    <div style="font-size:18px;font-weight:700">Mold Register</div>
-    <div class="header-count" id="totalCoun
+      <button class="pin-key" ontouchend="event.preventDefault();pinPress('1')" onclick="pinPress('1')">1</button>
+      <button class="pin-key" ontouchend="event.preventDefault();pinPress('2')" onclick="pinPress('2')">2</button>
+      <button class="pin-key" ontouchend="event.preventDefault();pinPress('3')" onclick="pinPress('3')">3</button>
+      <button class="pin-key" ontouchend="event.preventDefault();pinPress('4')" onclick="pinPress('4')">4</button>
+      <button class="pin-key" ontouchend="event.preventDefault();pinPress('5')" onclick="pinPress('5')">5</button>
+      <button class="pin-key" ontouchend="event.preventDefault();pinPress('6')" onclick="pinPress('6')">6</button>
+      <button class="pin-key" ontouchend="event.preventDefault();pinPress('7')" onclick="pinPress('7')">7</button>
+      <button class="pin-key" ontouchend="event.preventDefault();pinPress('8')" onclick="pinPress('8')">8</button>
+      <b
